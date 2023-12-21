@@ -45,10 +45,9 @@ setBtnClick(true);
                     }}>Reset</button>
                   
                </form>
-               {
-                btnClick && (
-              <h3>{arr[(name1.length+name2.length)%6]}</h3>
-               )}
+                
+              <h3>{btnClick && arr[(name1.length+name2.length)%6]}</h3>
+              
         </div>
         )
     }
