@@ -5,7 +5,8 @@ let arr=["Siblings", "Friends","Love", "Affection", "Marriage", "Enemy"];
 const App =()=>{
     const[name1,setName1]=useState("");
     const[name2,setName2]=useState("");
-  const[relationship, setRelationship]=useState(0);
+  const[relationship, setRelationship]=useState("");
+  const[btnClick,setBtnClick]=useState(false);
     // console.log(name1, name2)
 
     function calculateRelationship(e){
@@ -20,7 +21,8 @@ const App =()=>{
      }
 setName1(str1);
 setName2(str2);
-     setRelationship(arr[(str1.length+str2.length)%6]);
+setBtnClick(true);
+    //  setRelationship(arr[(str1.length+str2.length)%6]);
 
     }
     
@@ -33,12 +35,17 @@ setName2(str2);
                 <input type="text" data-testid="input2" placeholder="Enter Second name"
                 onChange={(e)=>setName2(e.target.value)}/>
                     <button data-testid="calculate_relationship" type="submit" onClick={(e)=>calculateRelationship(e)}>calculate Relationship Future</button>
-                    <button data-testid="clear" type="reset" onClick={()=>setRelationship("")}>Reset</button>
+                    <button data-testid="clear" type="reset" onClick={()=>{
+                        setName1("");
+                        setName2("");
+                        setRelationship("");
+                        setBtnClick(false)
+                    }}>Reset</button>
                   
                </form>
                {
-                relationship!="" && (
-              <h3>{relationship}</h3>
+                btnClick && (
+              <h3>{arr[(name1.length+name2.length)%6]}</h3>
                )}
         </div>
         )
