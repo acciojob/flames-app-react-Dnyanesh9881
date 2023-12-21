@@ -5,7 +5,7 @@ let arr=["Siblings", "Friends","Love", "Affection", "Marriage", "Enemy"];
 const App =()=>{
     const[name1,setName1]=useState("");
     const[name2,setName2]=useState("");
-  const[relationship, setRelationship]=useState("");
+//   const[relationship, setRelationship]=useState("");
   const[btnClick,setBtnClick]=useState(false);
     // console.log(name1, name2)
 
@@ -40,7 +40,7 @@ setBtnClick(true);
                     <button data-testid="clear" type="reset" onClick={()=>{
                         setName1("");
                         setName2("");
-                        setRelationship("");
+                       
                         setBtnClick(false)
                     }}>Reset</button>
                   
