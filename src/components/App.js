@@ -31,9 +31,11 @@ setBtnClick(true);
                {/* Do not remove the main div */}
                <form>
                 <input type="text" data-testid="input1" placeholder="Enter First name"
-                onChange={(e)=>setName1(e.target.value)}/>
+                onChange={(e)=>setName1(e.target.value)}
+                value={name1}/>
                 <input type="text" data-testid="input2" placeholder="Enter Second name"
-                onChange={(e)=>setName2(e.target.value)}/>
+                onChange={(e)=>setName2(e.target.value)}
+                value={name2}/>
                     <button data-testid="calculate_relationship" type="submit" onClick={(e)=>calculateRelationship(e)}>calculate Relationship Future</button>
                     <button data-testid="clear" type="reset" onClick={()=>{
                         setName1("");
