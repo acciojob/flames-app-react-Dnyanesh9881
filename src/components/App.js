@@ -8,7 +8,7 @@ const App =()=>{
 //   const[relationship, setRelationship]=useState("");
   const[btnClick,setBtnClick]=useState(false);
     // console.log(name1, name2)
-
+if()
     function calculateRelationship(e){
      e.preventDefault();
      let str1=name1
@@ -30,10 +30,10 @@ setBtnClick(true);
             <div id="main">
                {/* Do not remove the main div */}
                <form>
-                <input type="text" data-testid="input1" placeholder="Enter First name"
+                <input type="text" name="name2" data-testid="input1" placeholder="Enter First name"
                 onChange={(e)=>setName1(e.target.value)}
                 value={name1}/>
-                <input type="text" data-testid="input2" placeholder="Enter Second name"
+                <input type="text" name="name2" data-testid="input2" placeholder="Enter Second name"
                 onChange={(e)=>setName2(e.target.value)}
                 value={name2}/>
                     <button data-testid="calculate_relationship" type="submit" onClick={(e)=>calculateRelationship(e)}>calculate Relationship Future</button>
@@ -46,7 +46,7 @@ setBtnClick(true);
                   
                </form>
                 
-              <h3>{btnClick && arr[(name1.length+name2.length)%6]}</h3>
+              <h3 data-testid="answer">{btnClick && arr[(name1.length+name2.length)%6]}</h3>
               
         </div>
         )
